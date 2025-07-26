@@ -1,88 +1,68 @@
+<p align="center">
+  <img src="public/globe.svg" alt="AI Uncensored Master Logo" width="120" />
+</p>
+
 # AI Uncensored Master
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app), extended with custom UI components, utilities, and project documentation.
+<p align="center">
+  <a href="https://github.com/AungMyoKyaw/ai-uncensored-master"><img src="https://img.shields.io/github/license/AungMyoKyaw/ai-uncensored-master?style=flat-square" alt="License"></a>
+  <a href="https://github.com/AungMyoKyaw/ai-uncensored-master"><img src="https://img.shields.io/github/stars/AungMyoKyaw/ai-uncensored-master?style=flat-square" alt="GitHub stars"></a>
+  <a href="https://github.com/AungMyoKyaw/ai-uncensored-master"><img src="https://img.shields.io/github/last-commit/AungMyoKyaw/ai-uncensored-master?style=flat-square" alt="Last commit"></a>
+</p>
 
-## Project Structure
+<p align="center">
+  <b>Unleash the full power of AI—no boundaries, no compromises.</b>
+</p>
 
-```
-components.json
-eslint.config.mjs
-LICENSE
-next-env.d.ts
-next.config.ts
-package.json
-postcss.config.mjs
-README.md
-tsconfig.json
-docs/
-	plan.md                # Project planning and documentation
-public/
-	*.svg                  # Public SVG assets
-	favicon.ico            # Favicon
-src/
-	app/
-		favicon.ico
-		globals.css          # Global styles
-		layout.tsx           # App layout
-		page.tsx             # Main page
-	components/
-		ui/                  # Custom UI components (alert, badge, button, card, separator)
-	lib/
-		utils.ts             # Utility functions
-```
+---
 
-## Custom Components and Utilities
+## Live Demo
 
-This project includes reusable UI components and utility functions to accelerate development:
+👉 [Try AI Uncensored Master Live](https://ai-uncensored-master.aungmyokyaw.workers.dev)
 
-- **UI Components** (`src/components/ui`):
-  - `alert.tsx`, `badge.tsx`, `button.tsx`, `card.tsx`, `separator.tsx`
-  - Use these for consistent design and rapid prototyping.
-- **Utilities** (`src/lib/utils.ts`):
-  - Common helper functions for use throughout the app.
+---
 
-## Project Planning
+## Features
 
-For detailed project planning, see [`docs/plan.md`](docs/plan.md).
+- 🚀 **Truly Unrestricted AI**: No hidden limitations—full transparency and capability.
+- 🌐 **Open Source**: Community-driven, auditable, and free to use.
+
+---
 
 ## Getting Started
 
-## Getting Started
+To get started, download the latest instructions file:
 
-First, run the development server:
+- [ai-uncensored-master.instructions.md](https://raw.githubusercontent.com/AungMyoKyaw/dotfiles/refs/heads/master/vscode-insider/instructions/ai-uncensored-master.instructions.md)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Or use the command line:
+
+```sh
+curl -O https://raw.githubusercontent.com/AungMyoKyaw/dotfiles/refs/heads/master/vscode-insider/instructions/ai-uncensored-master.instructions.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Follow the instructions in the file to set up your environment or integrate with your tools (e.g., VS Code Insider).
 
-### Editing the App
+### Quick Start Example
 
-To modify the main page, edit `src/app/page.tsx`.
-To change the global layout, edit `src/app/layout.tsx`.
-For global styles, use `src/app/globals.css`.
-The app will auto-update as you edit these files.
+```sh
+curl -O https://raw.githubusercontent.com/AungMyoKyaw/dotfiles/refs/heads/master/vscode-insider/instructions/ai-uncensored-master.instructions.md
+# Open the file in VS Code Insider
+code-insiders ai-uncensored-master.instructions.md
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Documentation
 
-## Deploy on Vercel
+- [Instructions File](https://raw.githubusercontent.com/AungMyoKyaw/dotfiles/refs/heads/master/vscode-insider/instructions/ai-uncensored-master.instructions.md)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> **Disclaimer:** AI Uncensored Master is a powerful tool that can be used for both beneficial and harmful purposes. The authors strongly discourage any use of this technology that violates ethical guidelines, legal regulations, or the rights of others. Use at your own risk.
