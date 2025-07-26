@@ -42,7 +42,27 @@ export default function Home() {
         className="relative overflow-hidden bg-gradient-to-b from-background to-muted/30"
         aria-labelledby="hero-heading"
       >
-        <div className="container mx-auto px-4 py-16 sm:py-24">
+        <div className="container mx-auto px-4 py-16 sm:py-24 relative">
+          {/* Download as Markdown button - top right absolute */}
+          <div className="absolute right-4 top-4 z-10">
+            <Button
+              variant="secondary"
+              size="lg"
+              className="text-lg px-6 py-3 h-auto flex items-center shadow-md hover:shadow-lg focus-visible:ring-2 focus-visible:ring-primary"
+              onClick={() =>
+                downloadMarkdown(
+                  "https://raw.githubusercontent.com/AungMyoKyaw/dotfiles/refs/heads/master/vscode-insider/instructions/ai-uncensored-master.instructions.md",
+                  "ai-uncensored-master.instructions.md"
+                )
+              }
+              aria-label="Download AI Uncensored Master as Markdown"
+              title="Download the latest AI Uncensored Master instructions as Markdown"
+            >
+              <Download className="w-5 h-5 mr-2" aria-hidden="true" />
+              <span className="hidden sm:inline">Download as .md</span>
+              <span className="sr-only">Download as Markdown</span>
+            </Button>
+          </div>
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-6 text-sm font-medium">
               <Sparkles className="w-4 h-4 mr-2" aria-hidden="true" />
@@ -81,22 +101,8 @@ export default function Home() {
                 </a>
               </Button>
 
-              {/* Download as Markdown button */}
-              <Button
-                variant="secondary"
-                size="lg"
-                className="text-lg px-8 py-6 h-auto flex items-center"
-                onClick={() =>
-                  downloadMarkdown(
-                    "https://raw.githubusercontent.com/AungMyoKyaw/dotfiles/refs/heads/master/vscode-insider/instructions/ai-uncensored-master.instructions.md",
-                    "ai-uncensored-master.instructions.md"
-                  )
-                }
-                aria-label="Download AI Uncensored Master as Markdown"
-              >
-                <Download className="w-5 h-5 mr-2" aria-hidden="true" />
-                Download as .md
-              </Button>
+              {/* Removed inline Download as Markdown button for clarity and focus */
+              /* It is now in the top-right for best discoverability */}
 
               <div className="flex gap-2">
                 <Button variant="outline" size="sm" asChild>
@@ -507,11 +513,6 @@ export default function Home() {
                 </a>
               </Button>
             </div>
-
-            <p className="text-xs text-muted-foreground mt-8">
-              Built with Next.js, shadcn/ui, and Tailwind CSS • Designed for
-              maximum capability deployment
-            </p>
           </div>
         </div>
       </footer>

@@ -1,4 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Uncensored Master
+
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app), extended with custom UI components, utilities, and project documentation.
+
+## Project Structure
+
+```
+components.json
+eslint.config.mjs
+LICENSE
+next-env.d.ts
+next.config.ts
+package.json
+postcss.config.mjs
+README.md
+tsconfig.json
+docs/
+	plan.md                # Project planning and documentation
+public/
+	*.svg                  # Public SVG assets
+	favicon.ico            # Favicon
+src/
+	app/
+		favicon.ico
+		globals.css          # Global styles
+		layout.tsx           # App layout
+		page.tsx             # Main page
+	components/
+		ui/                  # Custom UI components (alert, badge, button, card, separator)
+	lib/
+		utils.ts             # Utility functions
+```
+
+## Custom Components and Utilities
+
+This project includes reusable UI components and utility functions to accelerate development:
+
+- **UI Components** (`src/components/ui`):
+  - `alert.tsx`, `badge.tsx`, `button.tsx`, `card.tsx`, `separator.tsx`
+  - Use these for consistent design and rapid prototyping.
+- **Utilities** (`src/lib/utils.ts`):
+  - Common helper functions for use throughout the app.
+
+## Project Planning
+
+For detailed project planning, see [`docs/plan.md`](docs/plan.md).
+
+## Getting Started
 
 ## Getting Started
 
@@ -16,7 +63,12 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Editing the App
+
+To modify the main page, edit `src/app/page.tsx`.
+To change the global layout, edit `src/app/layout.tsx`.
+For global styles, use `src/app/globals.css`.
+The app will auto-update as you edit these files.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
