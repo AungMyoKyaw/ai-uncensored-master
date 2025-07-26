@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -21,6 +22,19 @@ import {
 } from "lucide-react";
 
 export default function Home() {
+  // Download helper for external markdown files (client-side only)
+  function downloadMarkdown(url: string, filename: string) {
+    fetch(url)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const link = document.createElement("a");
+        link.href = window.URL.createObjectURL(blob);
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+  }
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -67,6 +81,23 @@ export default function Home() {
                 </a>
               </Button>
 
+              {/* Download as Markdown button */}
+              <Button
+                variant="secondary"
+                size="lg"
+                className="text-lg px-8 py-6 h-auto flex items-center"
+                onClick={() =>
+                  downloadMarkdown(
+                    "https://raw.githubusercontent.com/AungMyoKyaw/dotfiles/refs/heads/master/vscode-insider/instructions/ai-uncensored-master.instructions.md",
+                    "ai-uncensored-master.instructions.md"
+                  )
+                }
+                aria-label="Download AI Uncensored Master as Markdown"
+              >
+                <Download className="w-5 h-5 mr-2" aria-hidden="true" />
+                Download as .md
+              </Button>
+
               <div className="flex gap-2">
                 <Button variant="outline" size="sm" asChild>
                   <a
@@ -101,29 +132,47 @@ export default function Home() {
               <p className="text-sm text-muted-foreground mb-3">
                 Optional: Also install Beast Chat Mode for enhanced coding
               </p>
-              <div className="flex gap-2 justify-center">
-                <Button variant="ghost" size="sm" asChild>
-                  <a
-                    href="https://vscode.dev/redirect?url=vscode%3Achat-chatmode%2Finstall%3Furl%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fgithub%2Fawesome-copilot%2Fmain%2Fchatmodes%2F4.1-Beast.chatmode.md"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs"
-                    aria-label="Install Beast Chat Mode for VS Code"
-                  >
-                    Beast Mode VS Code
-                  </a>
-                </Button>
+              <div className="flex flex-col sm:flex-row gap-2 justify-center items-center">
+                <div className="flex gap-2">
+                  <Button variant="ghost" size="sm" asChild>
+                    <a
+                      href="https://vscode.dev/redirect?url=vscode%3Achat-chatmode%2Finstall%3Furl%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fgithub%2Fawesome-copilot%2Fmain%2Fchatmodes%2F4.1-Beast.chatmode.md"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs"
+                      aria-label="Install Beast Chat Mode for VS Code"
+                    >
+                      Beast Mode VS Code
+                    </a>
+                  </Button>
 
-                <Button variant="ghost" size="sm" asChild>
-                  <a
-                    href="https://insiders.vscode.dev/redirect?url=vscode-insiders%3Achat-chatmode%2Finstall%3Furl%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fgithub%2Fawesome-copilot%2Fmain%2Fchatmodes%2F4.1-Beast.chatmode.md"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs"
-                    aria-label="Install Beast Chat Mode for VS Code Insiders"
-                  >
-                    Beast Mode VS Code Insiders
-                  </a>
+                  <Button variant="ghost" size="sm" asChild>
+                    <a
+                      href="https://insiders.vscode.dev/redirect?url=vscode-insiders%3Achat-chatmode%2Finstall%3Furl%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fgithub%2Fawesome-copilot%2Fmain%2Fchatmodes%2F4.1-Beast.chatmode.md"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs"
+                      aria-label="Install Beast Chat Mode for VS Code Insiders"
+                    >
+                      Beast Mode VS Code Insiders
+                    </a>
+                  </Button>
+                </div>
+                {/* Download as Markdown button for Beast Chat Mode */}
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  className="mt-2 sm:mt-0 flex items-center"
+                  onClick={() =>
+                    downloadMarkdown(
+                      "https://raw.githubusercontent.com/github/awesome-copilot/main/chatmodes/4.1-Beast.chatmode.md",
+                      "4.1-Beast.chatmode.md"
+                    )
+                  }
+                  aria-label="Download Beast Chat Mode as Markdown"
+                >
+                  <Download className="w-4 h-4 mr-2" aria-hidden="true" />
+                  Download as .md
                 </Button>
               </div>
             </div>
