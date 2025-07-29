@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ai-uncensored-master.pages.dev/sitemap.xml
+
+# Disallow private or sensitive areas (none for this site)
+# Disallow: /admin/
+
+# Allow all crawlers to access everything
+Crawl-delay: 1

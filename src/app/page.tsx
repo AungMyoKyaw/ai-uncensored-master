@@ -35,10 +35,56 @@ export default function Home() {
         document.body.removeChild(link);
       });
   }
+
+  // Structured Data for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AI Uncensored Master",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "VS Code, VS Code Insiders",
+    "description": "Advanced AI framework with unrestricted capabilities, sequential thinking, and autonomous completion for VS Code environments.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "AungMyoKyaw"
+    },
+    "downloadUrl": "https://raw.githubusercontent.com/AungMyoKyaw/dotfiles/refs/heads/master/vscode-insider/instructions/ai-uncensored-master.instructions.md",
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-07-29"
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      
+      {/* Skip to main content link for accessibility */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-primary-foreground px-4 py-2 rounded-md z-50"
+      >
+        Skip to main content
+      </a>
+
+      {/* Navigation landmark for accessibility */}
+      <nav className="sr-only" aria-label="Main navigation">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#capabilities">Capabilities</a></li>
+        </ul>
+      </nav>
       {/* Hero Section */}
       <section
+        id="hero"
         className="relative overflow-hidden bg-gradient-to-b from-background to-muted/30"
         aria-labelledby="hero-heading"
       >
@@ -226,8 +272,8 @@ export default function Home() {
       </section>
 
       {/* Core Features */}
-      <main>
-        <section className="py-20" aria-labelledby="features-heading">
+      <main id="main-content">
+        <section id="features" className="py-20" aria-labelledby="features-heading">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
@@ -385,7 +431,7 @@ export default function Home() {
         <Separator className="container mx-auto" />
 
         {/* Technical Implementation */}
-        <section className="py-20" aria-labelledby="technical-heading">
+        <section id="capabilities" className="py-20" aria-labelledby="technical-heading">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2

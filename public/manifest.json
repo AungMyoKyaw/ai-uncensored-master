@@ -1,0 +1,20 @@
+{
+  "name": "AI Uncensored - Beast Mode AI",
+  "short_name": "AI Uncensored",
+  "description": "Transform your AI assistant with unrestricted capabilities, advanced sequential thinking, and autonomous completion.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff4e6",
+  "theme_color": "#4b3832",
+  "orientation": "portrait-primary",
+  "categories": ["productivity", "developer-tools", "utilities"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
