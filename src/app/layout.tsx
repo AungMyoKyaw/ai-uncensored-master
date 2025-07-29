@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ai-uncensored-master.pages.dev'),
+  metadataBase: new URL("https://ai-uncensored-master.pages.dev"),
   title: "AI Uncensored - Unlock Beast Mode AI",
   description:
     "Transform your AI assistant with unrestricted capabilities, advanced sequential thinking, and autonomous completion. Experience the power of AI without boundaries.",
