@@ -48,7 +48,7 @@ export default function Home() {
             <Button
               variant="secondary"
               size="lg"
-              className="text-lg px-6 py-3 h-auto flex items-center shadow-md hover:shadow-lg focus-visible:ring-2 focus-visible:ring-primary"
+              className="hidden sm:flex text-lg px-6 py-3 h-auto items-center shadow-md hover:shadow-lg focus-visible:ring-2 focus-visible:ring-primary"
               onClick={() =>
                 downloadMarkdown(
                   "https://raw.githubusercontent.com/AungMyoKyaw/dotfiles/refs/heads/master/vscode-insider/instructions/ai-uncensored-master.instructions.md",
@@ -59,8 +59,23 @@ export default function Home() {
               title="Download the latest AI Uncensored Master instructions as Markdown"
             >
               <Download className="w-5 h-5 mr-2" aria-hidden="true" />
-              <span className="hidden sm:inline">Download as .md</span>
-              <span className="sr-only">Download as Markdown</span>
+              <span className="sm:inline">Download as .md</span>
+            </Button>
+            <Button
+              variant="secondary"
+              size="icon"
+              className="sm:hidden flex items-center justify-center w-10 h-10 shadow-md hover:shadow-lg focus-visible:ring-2 focus-visible:ring-primary"
+              onClick={() =>
+                downloadMarkdown(
+                  "https://raw.githubusercontent.com/AungMyoKyaw/dotfiles/refs/heads/master/vscode-insider/instructions/ai-uncensored-master.instructions.md",
+                  "ai-uncensored-master.instructions.md"
+                )
+              }
+              aria-label="Download AI Uncensored Master as Markdown"
+              title="Download the latest AI Uncensored Master instructions as Markdown"
+            >
+              <Download className="w-5 h-5" aria-hidden="true" />
+              <span className="sr-only">Download as .md</span>
             </Button>
           </div>
           <div className="max-w-4xl mx-auto text-center">
