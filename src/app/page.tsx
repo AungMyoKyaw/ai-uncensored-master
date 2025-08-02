@@ -157,7 +157,11 @@ export default function Home() {
 
             {/* Primary CTA - ai-uncensored-master.instructions.md */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <Button size="lg" className="text-lg px-8 py-6 h-auto" asChild>
+              <Button
+                size="lg"
+                className="text-lg px-8 py-6 h-auto w-full sm:w-auto"
+                asChild
+              >
                 <a
                   href="https://vscode.dev/redirect?url=vscode%3Achat-chatmode%2Finstall%3Furl%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2FAungMyoKyaw%2Fdotfiles%2Frefs%2Fheads%2Fmaster%2Fvscode-insider%2Finstructions%2Fai-uncensored-master.instructions.md"
                   target="_blank"
@@ -173,8 +177,13 @@ export default function Home() {
               {/* Removed inline Download as Markdown button for clarity and focus */
               /* It is now in the top-right for best discoverability */}
 
-              <div className="flex gap-2">
-                <Button variant="outline" size="sm" asChild>
+              <div className="flex gap-2 w-full sm:w-auto">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="flex-1 sm:flex-none"
+                  asChild
+                >
                   <a
                     href="https://vscode.dev/redirect?url=vscode%3Achat-chatmode%2Finstall%3Furl%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2FAungMyoKyaw%2Fdotfiles%2Frefs%2Fheads%2Fmaster%2Fvscode-insider%2Finstructions%2Fai-uncensored-master.instructions.md"
                     target="_blank"
@@ -187,7 +196,12 @@ export default function Home() {
                   </a>
                 </Button>
 
-                <Button variant="outline" size="sm" asChild>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="flex-1 sm:flex-none"
+                  asChild
+                >
                   <a
                     href="https://insiders.vscode.dev/redirect?url=vscode-insiders%3Achat-chatmode%2Finstall%3Furl%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2FAungMyoKyaw%2Fdotfiles%2Frefs%2Fheads%2Fmaster%2Fvscode-insider%2Finstructions%2Fai-uncensored-master.instructions.md"
                     target="_blank"
@@ -203,13 +217,23 @@ export default function Home() {
             </div>
 
             {/* Optional Beast Chat Mode */}
-            <div className="text-center">
-              <p className="text-sm text-muted-foreground mb-3">
-                Optional: Also install Beast Chat Mode for enhanced coding
-              </p>
-              <div className="flex flex-col sm:flex-row gap-2 justify-center items-center">
-                <div className="flex gap-2">
-                  <Button variant="ghost" size="sm" asChild>
+            <div className="bg-muted/30 rounded-lg border border-dashed border-muted-foreground/20 p-6 mt-8">
+              <div className="text-center">
+                <p className="text-sm text-muted-foreground mb-4 font-medium">
+                  <span className="inline-flex items-center gap-2">
+                    <Badge variant="outline" className="text-xs">
+                      Optional
+                    </Badge>
+                    Also install Beast Chat Mode for enhanced coding
+                  </span>
+                </p>
+                <div className="flex flex-col sm:flex-row flex-wrap gap-2 justify-center items-center">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="w-full sm:w-auto min-w-[180px]"
+                    asChild
+                  >
                     <a
                       href="https://vscode.dev/redirect?url=vscode%3Achat-chatmode%2Finstall%3Furl%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fgithub%2Fawesome-copilot%2Fmain%2Fchatmodes%2F4.1-Beast.chatmode.md"
                       target="_blank"
@@ -220,8 +244,12 @@ export default function Home() {
                       Beast Mode VS Code
                     </a>
                   </Button>
-
-                  <Button variant="ghost" size="sm" asChild>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="w-full sm:w-auto min-w-[220px]"
+                    asChild
+                  >
                     <a
                       href="https://insiders.vscode.dev/redirect?url=vscode-insiders%3Achat-chatmode%2Finstall%3Furl%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fgithub%2Fawesome-copilot%2Fmain%2Fchatmodes%2F4.1-Beast.chatmode.md"
                       target="_blank"
@@ -232,23 +260,23 @@ export default function Home() {
                       Beast Mode VS Code Insiders
                     </a>
                   </Button>
+                  {/* Download as Markdown button for Beast Chat Mode */}
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="w-full sm:w-auto min-w-[160px] mt-2 sm:mt-0 flex items-center text-muted-foreground hover:text-foreground justify-center"
+                    onClick={() =>
+                      downloadMarkdown(
+                        "https://raw.githubusercontent.com/github/awesome-copilot/main/chatmodes/4.1-Beast.chatmode.md",
+                        "4.1-Beast.chatmode.md"
+                      )
+                    }
+                    aria-label="Download Beast Chat Mode as Markdown"
+                  >
+                    <Download className="w-4 h-4 mr-2" aria-hidden="true" />
+                    Download as .md
+                  </Button>
                 </div>
-                {/* Download as Markdown button for Beast Chat Mode */}
-                <Button
-                  variant="secondary"
-                  size="sm"
-                  className="mt-2 sm:mt-0 flex items-center"
-                  onClick={() =>
-                    downloadMarkdown(
-                      "https://raw.githubusercontent.com/github/awesome-copilot/main/chatmodes/4.1-Beast.chatmode.md",
-                      "4.1-Beast.chatmode.md"
-                    )
-                  }
-                  aria-label="Download Beast Chat Mode as Markdown"
-                >
-                  <Download className="w-4 h-4 mr-2" aria-hidden="true" />
-                  Download as .md
-                </Button>
               </div>
             </div>
           </div>
@@ -276,6 +304,70 @@ export default function Home() {
               solutions with complete focus on your objectives.
             </AlertDescription>
           </Alert>
+        </div>
+      </section>
+
+      {/* What's New / Changelog Section */}
+      <section
+        className="py-16 bg-accent/5 border-y"
+        aria-labelledby="changelog-heading"
+      >
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2
+                id="changelog-heading"
+                className="text-2xl sm:text-3xl font-bold text-foreground mb-4"
+              >
+                What&apos;s New
+              </h2>
+              <p className="text-muted-foreground">
+                Latest updates and improvements to AI Uncensored Master
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              <Card className="bg-background/50">
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="text-lg">
+                      Version 2.0 - Enhanced UI/UX
+                    </CardTitle>
+                    <Badge variant="secondary" className="text-xs">
+                      Latest
+                    </Badge>
+                  </div>
+                  <CardDescription>August 2, 2025</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <ul className="space-y-2 text-sm text-muted-foreground list-disc list-inside">
+                    <li>Improved visual hierarchy and button styling</li>
+                    <li>Enhanced contrast ratios for better accessibility</li>
+                    <li>Better visual separation for optional features</li>
+                    <li>Added changelog section for transparency</li>
+                    <li>Improved footer with engagement elements</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-background/30">
+                <CardHeader>
+                  <CardTitle className="text-lg">
+                    Version 1.5 - Core Framework
+                  </CardTitle>
+                  <CardDescription>July 29, 2025</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-sm text-muted-foreground list-disc list-inside">
+                    <li>Advanced sequential thinking framework</li>
+                    <li>Unrestricted capability deployment</li>
+                    <li>Autonomous completion protocols</li>
+                    <li>Comprehensive validation systems</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -565,8 +657,8 @@ export default function Home() {
               full potential of unrestricted AI capabilities.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <Button size="lg" className="w-full sm:w-auto" asChild>
                 <a
                   href="https://vscode.dev/redirect?url=vscode%3Achat-chatmode%2Finstall%3Furl%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2FAungMyoKyaw%2Fdotfiles%2Frefs%2Fheads%2Fmaster%2Fvscode-insider%2Finstructions%2Fai-uncensored-master.instructions.md"
                   target="_blank"
@@ -578,7 +670,12 @@ export default function Home() {
                 </a>
               </Button>
 
-              <Button size="lg" variant="outline" asChild>
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto"
+                asChild
+              >
                 <a
                   href="https://insiders.vscode.dev/redirect?url=vscode-insiders%3Achat-chatmode%2Finstall%3Furl%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2FAungMyoKyaw%2Fdotfiles%2Frefs%2Fheads%2Fmaster%2Fvscode-insider%2Finstructions%2Fai-uncensored-master.instructions.md"
                   target="_blank"
@@ -589,6 +686,40 @@ export default function Home() {
                   Install for VS Code Insiders
                 </a>
               </Button>
+            </div>
+
+            {/* Enhanced footer with engagement elements */}
+            <Separator className="mb-6" />
+
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+              <div className="flex items-center gap-4">
+                <span>© 2025 AI Uncensored Master</span>
+                <Button variant="link" size="sm" asChild>
+                  <a
+                    href="https://github.com/AungMyoKyaw/dotfiles"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="View source code on GitHub"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    GitHub Repository
+                  </a>
+                </Button>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() =>
+                    window.scrollTo({ top: 0, behavior: "smooth" })
+                  }
+                  aria-label="Back to top"
+                  className="text-muted-foreground hover:text-foreground"
+                >
+                  ↑ Back to Top
+                </Button>
+              </div>
             </div>
           </div>
         </div>

@@ -64,11 +64,11 @@
   --border: oklch(0.88 0.015 20);
   --input: oklch(0.94 0.01 20);
   --ring: oklch(0.55 0.06 20);
-  --chart-1: oklch(0.6 0.15 25);
-  --chart-2: oklch(0.7 0.12 35);
-  --chart-3: oklch(0.5 0.1 45);
-  --chart-4: oklch(0.65 0.14 15);
-  --chart-5: oklch(0.45 0.08 30);
+  --chart-1: oklch(0.6 0.15 25); /* Warm brown-orange (accessible) */
+  --chart-2: oklch(0.65 0.12 200); /* Blue (colorblind safe) */
+  --chart-3: oklch(0.55 0.14 130); /* Green (distinct from red) */
+  --chart-4: oklch(0.7 0.16 60); /* Yellow-orange (distinguishable) */
+  --chart-5: oklch(0.45 0.12 300); /* Purple (accessible contrast) */
   --sidebar: oklch(0.96 0.01 20);
   --sidebar-foreground: oklch(0.25 0.02 15);
   --sidebar-primary: oklch(0.35 0.05 18);
@@ -80,36 +80,40 @@
 }
 
 .dark {
-  /* Dark mode with warm undertones */
+  /* Dark mode with warm undertones and improved contrast */
   --background: oklch(0.12 0.015 15); /* Deep warm dark */
-  --foreground: oklch(0.95 0.008 25); /* Warm light cream */
+  --foreground: oklch(
+    0.98 0.005 25
+  ); /* Brighter warm light cream for better contrast */
   --card: oklch(0.15 0.02 18); /* Slightly lighter dark card */
-  --card-foreground: oklch(0.95 0.008 25);
+  --card-foreground: oklch(0.98 0.005 25);
   --popover: oklch(0.15 0.02 18);
-  --popover-foreground: oklch(0.95 0.008 25);
+  --popover-foreground: oklch(0.98 0.005 25);
   --primary: oklch(0.75 0.04 22); /* Warm light brown */
   --primary-foreground: oklch(0.12 0.015 15);
   --secondary: oklch(0.25 0.03 20); /* Dark warm secondary */
-  --secondary-foreground: oklch(0.95 0.008 25);
+  --secondary-foreground: oklch(0.98 0.005 25);
   --muted: oklch(0.2 0.02 18);
-  --muted-foreground: oklch(0.7 0.02 20);
+  --muted-foreground: oklch(
+    0.75 0.02 20
+  ); /* Increased contrast for better readability */
   --accent: oklch(0.65 0.05 25); /* Warm accent */
   --accent-foreground: oklch(0.12 0.015 15);
   --destructive: oklch(0.65 0.18 12); /* Warm red for dark mode */
   --border: oklch(0.2 0.02 18);
   --input: oklch(0.18 0.02 16);
   --ring: oklch(0.65 0.05 25);
-  --chart-1: oklch(0.7 0.12 28);
-  --chart-2: oklch(0.8 0.1 38);
-  --chart-3: oklch(0.6 0.08 48);
-  --chart-4: oklch(0.75 0.11 18);
-  --chart-5: oklch(0.55 0.06 33);
+  --chart-1: oklch(0.7 0.12 28); /* Warm brown-orange (accessible) */
+  --chart-2: oklch(0.65 0.1 220); /* Blue (colorblind safe) */
+  --chart-3: oklch(0.6 0.12 140); /* Green (distinct from red) */
+  --chart-4: oklch(0.75 0.14 18); /* Yellow-orange (distinguishable) */
+  --chart-5: oklch(0.55 0.1 280); /* Purple (accessible contrast) */
   --sidebar: oklch(0.15 0.02 18);
-  --sidebar-foreground: oklch(0.95 0.008 25);
+  --sidebar-foreground: oklch(0.98 0.005 25);
   --sidebar-primary: oklch(0.75 0.04 22);
   --sidebar-primary-foreground: oklch(0.12 0.015 15);
   --sidebar-accent: oklch(0.2 0.02 18);
-  --sidebar-accent-foreground: oklch(0.95 0.008 25);
+  --sidebar-accent-foreground: oklch(0.98 0.005 25);
   --sidebar-border: oklch(0.2 0.02 18);
   --sidebar-ring: oklch(0.65 0.05 25);
 }
@@ -120,5 +124,15 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Improved link visibility and affordance */
+  a:not([class*="button"]):not([class*="btn"]) {
+    @apply text-primary underline underline-offset-2 decoration-primary/60 hover:decoration-primary transition-colors;
+  }
+
+  /* Ensure button-styled links don't get the text decoration */
+  a[data-slot="button"] {
+    @apply no-underline;
   }
 }
