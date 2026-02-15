@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Head from "next/head";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -58,10 +57,6 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
     creator: "@AungMyoKyaw"
   },
-  verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code"
-  },
   alternates: {
     canonical: "https://ai-uncensored-master.pages.dev"
   }
@@ -74,10 +69,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <title>AI Uncensored</title>
+      <head>
         <link rel="manifest" href="/manifest.json" />
-      </Head>
+        <meta name="theme-color" content="#4b3832" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
