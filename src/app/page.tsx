@@ -21,19 +21,30 @@ import {
   Sparkles
 } from "lucide-react";
 
+const INSTRUCTIONS_URL =
+  "https://raw.githubusercontent.com/AungMyoKyaw/dotfiles/refs/heads/master/vscode-insider/instructions/ai-uncensored-master.instructions.md";
+const BEAST_CHATMODE_URL =
+  "https://raw.githubusercontent.com/github/awesome-copilot/main/chatmodes/4.1-Beast.chatmode.md";
+
 export default function Home() {
-  // Download helper for external markdown files (client-side only)
-  function downloadMarkdown(url: string, filename: string) {
-    fetch(url)
-      .then((response) => response.blob())
-      .then((blob) => {
-        const link = document.createElement("a");
-        link.href = window.URL.createObjectURL(blob);
-        link.download = filename;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      });
+  async function downloadMarkdown(url: string, filename: string): Promise<void> {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Failed to download: ${response.statusText}`);
+      }
+      const blob = await response.blob();
+      const link = document.createElement("a");
+      link.href = window.URL.createObjectURL(blob);
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(link.href);
+    } catch (error) {
+      console.error("Download failed:", error);
+      window.open(url, "_blank");
+    }
   }
 
   // Structured Data for SEO
@@ -104,10 +115,7 @@ export default function Home() {
               size="lg"
               className="hidden sm:flex text-lg px-6 py-3 h-auto items-center shadow-md hover:shadow-lg focus-visible:ring-2 focus-visible:ring-primary"
               onClick={() =>
-                downloadMarkdown(
-                  "https://raw.githubusercontent.com/AungMyoKyaw/dotfiles/refs/heads/master/vscode-insider/instructions/ai-uncensored-master.instructions.md",
-                  "ai-uncensored-master.instructions.md"
-                )
+                downloadMarkdown(INSTRUCTIONS_URL, "ai-uncensored-master.instructions.md")
               }
               aria-label="Download AI Uncensored Master as Markdown"
               title="Download the latest AI Uncensored Master instructions as Markdown"
@@ -120,10 +128,7 @@ export default function Home() {
               size="icon"
               className="sm:hidden flex items-center justify-center w-10 h-10 shadow-md hover:shadow-lg focus-visible:ring-2 focus-visible:ring-primary"
               onClick={() =>
-                downloadMarkdown(
-                  "https://raw.githubusercontent.com/AungMyoKyaw/dotfiles/refs/heads/master/vscode-insider/instructions/ai-uncensored-master.instructions.md",
-                  "ai-uncensored-master.instructions.md"
-                )
+                downloadMarkdown(INSTRUCTIONS_URL, "ai-uncensored-master.instructions.md")
               }
               aria-label="Download AI Uncensored Master as Markdown"
               title="Download the latest AI Uncensored Master instructions as Markdown"
@@ -173,9 +178,6 @@ export default function Home() {
                   <ArrowRight className="w-5 h-5 ml-2" aria-hidden="true" />
                 </a>
               </Button>
-
-              {/* Removed inline Download as Markdown button for clarity and focus */
-              /* It is now in the top-right for best discoverability */}
 
               <div className="flex gap-2 w-full sm:w-auto">
                 <Button
@@ -266,10 +268,7 @@ export default function Home() {
                     size="sm"
                     className="w-full sm:w-auto min-w-[160px] mt-2 sm:mt-0 flex items-center text-muted-foreground hover:text-foreground justify-center"
                     onClick={() =>
-                      downloadMarkdown(
-                        "https://raw.githubusercontent.com/github/awesome-copilot/main/chatmodes/4.1-Beast.chatmode.md",
-                        "4.1-Beast.chatmode.md"
-                      )
+                      downloadMarkdown(BEAST_CHATMODE_URL, "4.1-Beast.chatmode.md")
                     }
                     aria-label="Download Beast Chat Mode as Markdown"
                   >

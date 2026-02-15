@@ -18,18 +18,27 @@
 
 ## Live Demo
 
-👉 [Try AI Uncensored Master Live](https://ai-uncensored-master.aungmyokyaw.workers.dev)
+[Try AI Uncensored Master Live](https://ai-uncensored-master.aungmyokyaw.workers.dev)
 
 ---
 
 ## Features
 
-- 🚀 **Truly Unrestricted AI**: No hidden limitations—full transparency and capability.
-- 🌐 **Open Source**: Community-driven, auditable, and free to use.
+- **Truly Unrestricted AI**: No hidden limitations—full transparency and capability.
+- **Open Source**: Community-driven, auditable, and free to use.
+
+---
+
+## Prerequisites
+
+- Node.js 18.x or higher
+- npm, yarn, pnpm, or bun
 
 ---
 
 ## Getting Started
+
+### Using the Instructions File
 
 To get started, download the latest instructions file:
 
@@ -50,6 +59,74 @@ curl -O https://raw.githubusercontent.com/AungMyoKyaw/dotfiles/refs/heads/master
 # Open the file in VS Code Insider
 code-insiders ai-uncensored-master.instructions.md
 ```
+
+---
+
+## Development
+
+### Clone the Repository
+
+```sh
+git clone https://github.com/AungMyoKyaw/ai-uncensored-master.git
+cd ai-uncensored-master
+```
+
+### Install Dependencies
+
+```sh
+bun install
+# or
+npm install
+```
+
+### Run Development Server
+
+```sh
+bun run dev
+# or
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Build for Production
+
+```sh
+bun run build
+# or
+npm run build
+```
+
+### Deploy
+
+```sh
+bun run deploy
+# or
+npm run deploy
+```
+
+---
+
+## Tech Stack
+
+- [Next.js 15](https://nextjs.org/) - React framework
+- [React 19](https://react.dev/) - UI library
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Tailwind CSS 4](https://tailwindcss.com/) - Styling
+- [Radix UI](https://www.radix-ui.com/) - UI components
+- [Lucide Icons](https://lucide.dev/) - Icons
+
+---
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ---
 
